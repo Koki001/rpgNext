@@ -1,0 +1,47 @@
+.landingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  width: 70%;
+  padding: 50px 0 100px;
+  margin: 0 auto;
+  background: url("../../../public/assets/dungeonBackground.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 5px;
+  // box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.582);
+  h1 {
+    margin: 50px;
+    color: white;
+  }
+  h2 {
+    display: block;
+    margin: 20px;
+  }
+  a {
+    height: 49px;
+    width: 190px;
+    display: block;
+    background-image: url("../../../public/assets/buttons/buttonLong_grey.png");
+    // background-position: center;
+    background-repeat: no-repeat;
+    background-size: 190px 49px;
+    padding: 10px 20px;
+    transition-property: color;
+    transition-duration: 0.2s;
+    position: relative;
+    text-align: center;
+  }
+  a:hover {
+    color: white;
+    background-image: url("../../../public/assets/buttons/buttonLong_brown.png");
+  }
+  a:active {
+    background-image: url("../../../public/assets/buttons/buttonLong_brown_pressed.png");
+    background-size: 190px 45px;
+    top: 4px;
+  }
+}

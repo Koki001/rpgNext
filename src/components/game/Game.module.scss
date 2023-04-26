@@ -1,0 +1,26 @@
+.bottomLeft {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h2 {
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .playerInfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button {
+      margin: 0 20px;
+      width: 150px;
+    }
+  }
+}
+.bottomRight {
+  width: 50%;
+  height: 100%;
+
+}

@@ -1,6 +1,20 @@
-import '@/src/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/global.scss";
+import type { AppProps } from "next/app";
+import { store } from "../store/store";
+import { Provider } from "react-redux";
+import { Forum } from "next/font/google";
+
+const forum = Forum({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Provider store={store}>
+      <main className={`${forum.className} wrapper`}>
+        <Component {...pageProps} />
+      </main>
+    </Provider>
+  );
 }

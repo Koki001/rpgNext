@@ -1,0 +1,242 @@
+.main {
+  height: 700px;
+  width: 100%;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.getReadyPopup {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    opacity: 0;
+    animation: fadeIn 1s linear;
+    animation-fill-mode: forwards;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+  }
+}
+.mainTop {
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../../public/assets/levels/backgrounds/background1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &:active,
+  &:focus {
+    cursor: url("../../../public/assets/global/cursorHand_blue.png"), auto;
+  }
+}
+.blockTop {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  z-index: 100;
+  &:hover {
+    cursor: no-drop;
+  }
+}
+
+.mainBottom {
+  height: 30%;
+  display: flex;
+  background-color: rgb(192, 181, 181);
+  // background-image: url("../../../public/assets/ui/background.jpg");
+  // background-size: 100% 100%;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  
+}
+.player {
+  // border: 1px solid red;
+  position: absolute;
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+  transform: translate(-50%, -50%);
+  transition-property: top, left;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  z-index: 10;
+  
+}
+.orc {
+  // border: 1px solid red;
+  background-image: url("../../../public/assets/sprites/enemies/orc/idle.png");
+  animation: orcIdle 3s linear infinite;
+  animation-timing-function: steps(5);
+  position: absolute;
+  background-color: transparent;
+  height: 100px;
+  width: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition-property: top, left;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  &:hover {
+    cursor: url("../../../public/assets/global/cursorSword_silver.png"), auto;
+  }
+  &:active {
+    cursor: url("../../../public/assets/global/cursorSword_gold.png"), auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// WARRIOR
+.player.warrior {
+  background-image: url("../../../public/assets/sprites/warrior/idle.png");
+  animation: warriorIdle 3s linear infinite;
+  animation-timing-function: steps(4);
+}
+.player.warriorRunRight {
+  background-image: url("../../../public/assets/sprites/warrior/warriorRunRight.png");
+  animation: mageRunRight 1s linear infinite;
+  animation-timing-function: steps(8);
+}
+.player.warriorRunLeft {
+  background-image: url("../../../public/assets/sprites/warrior/warriorRunRight.png");
+  animation: warriorRunLeft 1s linear infinite;
+  animation-timing-function: steps(8);
+}
+@keyframes warriorIdle {
+  from {
+    background-position: -14px -53px;
+  }
+  to {
+    background-position: -526px -53px;
+  }
+}
+@keyframes warriorRunRight {
+  from {
+    background-position: -14px -53px;
+  }
+  to {
+    background-position: -1038px -53px;
+  }
+}
+@keyframes warriorRunLeft {
+  from {
+    background-position: -14px -53px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+  to {
+    background-position: -1038px -53px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+}
+// MAGE
+.player.mage {
+  background-image: url("../../../public/assets/sprites/mage/idle.png");
+  animation: mageIdle 3s linear infinite;
+  animation-timing-function: steps(6);
+}
+.player.mageRunRight {
+  background-image: url("../../../public/assets/sprites/mage/mageRunRight.png");
+  animation: mageRunRight 1s linear infinite;
+  animation-timing-function: steps(8);
+}
+.player.mageRunLeft {
+  background-image: url("../../../public/assets/sprites/mage/mageRunRight.png");
+  animation: mageRunLeft 1s linear infinite;
+  animation-timing-function: steps(8);
+}
+@keyframes mageIdle {
+  from {
+    background-position: -14px -53px;
+  }
+  to {
+    background-position: -782px -53px;
+  }
+}
+@keyframes mageRunRight {
+  from {
+    background-position: -14px -53px;
+  }
+  to {
+    background-position: -1024px -53px;
+  }
+}
+@keyframes mageRunLeft {
+  from {
+    background-position: -14px -53px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+  to {
+    background-position: -1024px -53px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+}
+// ROGUE
+.player.rogue {
+  background-image: url("../../../public/assets/sprites/rogue/idle.png");
+  animation: rogueIdle 3s linear infinite;
+  animation-timing-function: steps(4);
+}
+.player.rogueRunRight {
+  background-image: url("../../../public/assets/sprites/rogue/rogueRunRight.png");
+  animation: rogueRunRight 1s linear infinite;
+  animation-timing-function: steps(8);
+}
+.player.rogueRunLeft {
+  background-image: url("../../../public/assets/sprites/rogue/rogueRunRight.png");
+  animation: rogueRunLeft 1s linear infinite;
+  animation-timing-function: steps(8);
+}
+@keyframes rogueIdle {
+  from {
+    background-position: -14px 75px;
+  }
+  to {
+    background-position: -526px 75px;
+  }
+}
+@keyframes rogueRunRight {
+  from {
+    background-position: -14px 75px;
+  }
+  to {
+    background-position: -1038px 75px;
+  }
+}
+@keyframes rogueRunLeft {
+  from {
+    background-position: -14px 75px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+  to {
+    background-position: -1038px 75px;
+    transform: translate(-50%, -50%) rotateY(180deg);
+  }
+}
+// ORC
+@keyframes orcIdle {
+  from {
+    background-position: 0px -15px;
+  }
+  to {
+    background-position: -480px -15px;
+  }
+}

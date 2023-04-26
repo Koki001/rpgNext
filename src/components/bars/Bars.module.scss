@@ -1,0 +1,47 @@
+.playerHealth,
+.playerMana,
+.playerPower,
+.playerExp {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+.playerExp {
+  color: black;
+}
+.healthBar,
+.manaBar,
+.powerBar,
+.expBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.bar {
+  p {
+    color: rgb(255, 255, 255);
+    z-index: 100;
+    font-weight: bold;
+  }
+}
+.healthBar {
+  background-color: red;
+}
+.powerBar {
+  background-color: rgb(218, 223, 150);
+}
+.manaBar {
+  background-color: blue;
+}
+.expBar {
+  background-color: rgb(92, 94, 71);
+}

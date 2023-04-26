@@ -1,0 +1,160 @@
+.encounterTop {
+  opacity: 0;
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../../public/assets/levels/backgrounds/background1E.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fadeIn 1s linear;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.yourTurn {
+  position: absolute;
+  top: 20%;
+  opacity: 0;
+  animation: fadeIn 2s linear;
+  animation-fill-mode: forwards;
+}
+.enemyTurn {
+  position: absolute;
+  top: 20%;
+  opacity: 0;
+  animation: fadeInOut 2s linear;
+  animation-fill-mode: forwards;
+}
+.actions {
+  height: 100%;
+}
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 70%;
+  button {
+    width: 40%;
+    min-width: 150px;
+  }
+}
+.player {
+  height: 200px;
+  width: 200px;
+}
+.enemy {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+// WARRIOR
+.player.warrior {
+  background-image: url("../../../public/assets/sprites/warrior/idle.png");
+  background-repeat: no-repeat;
+  background-size: 1024px 256px;
+  animation: warriorIdle 3s linear infinite;
+  animation-timing-function: steps(4);
+}
+@keyframes warriorIdle {
+  from {
+    background-position: 0px -35px;
+  }
+  to {
+    background-position: -1024px -35px;
+  }
+}
+// MAGE
+.player.mage {
+  background-image: url("../../../public/assets/sprites/mage/idle.png");
+  background-repeat: no-repeat;
+  background-size: 1536px 256px;
+  animation: mageIdle 2s linear infinite;
+  animation-timing-function: steps(6);
+}
+@keyframes mageIdle {
+  from {
+    background-position: 0px -35px;
+  }
+  to {
+    background-position: -1536px -35px;
+  }
+}
+// ROGUE
+.player.rogue {
+  background-image: url("../../../public/assets/sprites/rogue/idle.png");
+  animation: rogueIdle 2s linear infinite;
+  background-repeat: no-repeat;
+  background-size: 512px 256px;
+  animation-timing-function: steps(2);
+}
+@keyframes rogueIdle {
+  from {
+    background-position: 0px -35px;
+  }
+  to {
+    background-position: -512px -35px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.orc {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../public/assets/sprites/enemies/orc/idle.png");
+  background-repeat: no-repeat;
+  background-size: 960px 192px;
+  animation: orcIdle 3s linear infinite;
+  animation-timing-function: steps(5);
+  transform: rotateY(180deg);
+}
+.orcHp {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  top: 0;
+  right: -15px;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-align: center;
+  background-color: rgb(240, 240, 185);
+  p {
+    position: relative;
+    z-index: 100;
+    font-weight: bold;
+  }
+  span {
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transition: all 0.5s linear;
+  }
+}
+@keyframes orcIdle {
+  from {
+    background-position: 0px -15px;
+  }
+  to {
+    background-position: -960px -15px;
+  }
+}
